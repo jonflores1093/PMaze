@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     float moveHorz;
     float moveVert;
     private int itemCount;
+    
 
     void Start()
     {
@@ -21,19 +22,20 @@ public class Movement : MonoBehaviour
         moveHorz = Input.GetAxis("Horizontal");
         moveVert = Input.GetAxis("Vertical");
 
-       
+
     }
     void FixedUpdate() 
     {
         //Allows for the player to move using standard input
         Vector3 movement = new Vector3(moveHorz, 0.0f, moveVert);
         rigb.AddForce(movement * speed);
+        
 
     }
 
-    
 
-  
+
+
     //When an object is touched by the player, it will collect it and increase counter
     private void OnTriggerEnter(Collider collision)
     {
