@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Movement : MonoBehaviour
 {
     public float speed;
     private Rigidbody rigb;
     float moveHorz;
     float moveVert;
-    private int itemCount;
-    
+
+
 
     void Start()
     {
@@ -33,26 +33,22 @@ public class Movement : MonoBehaviour
 
     }
 
-
-
-
-    //When an object is touched by the player, it will collect it and increase counter
-    private void OnTriggerEnter(Collider collision)
+    void OnTriggerEnter(Collider col)
     {
-        print("item collected");
-        if (collision.CompareTag("Key"))
+        //Once the player collects all 10 keys, if the player touches the exit it will destory the object
+        if (col.gameObject.name == "Exit" && Keys.collectedKeys == 10) 
         {
-            
-            Destroy(collision.gameObject);
-            itemCount++;
+            Destroy(col.gameObject);
+        }
+
+        //Makes it so that the EndGame empty object loads end scene once triggered
+        if (col.gameObject.name == "EndGame") 
+        {
+            SceneManager.LoadScene(2);
         }
     }
 
-    //Creates a text box displaying amount of keys collected
-    private void OnGUI()
-    {
-        GUI.Label(new Rect(1, 1, 200, 30), "Keys Collected: " + itemCount);
-    }
+
 
 }
 
