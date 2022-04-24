@@ -322,6 +322,7 @@
 "Assets/Scripts/CameraFollow.cs"
 "Assets/Scripts/CollectedDisplay.cs"
 "Assets/Scripts/Keys.cs"
+"Assets/Scripts/Location.cs"
 "Assets/Scripts/Menu.cs"
 "Assets/Scripts/Movement.cs"
 "Assets/Scripts/TextDisplay.cs"

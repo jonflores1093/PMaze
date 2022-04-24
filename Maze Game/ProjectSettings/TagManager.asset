@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Key
   - Exit
+  - SouthEast
+  - SouthWest
+  - NorthEast
+  - NorthWest
   layers:
   - Default
   - TransparentFX
