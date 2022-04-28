@@ -14,6 +14,8 @@ public class Location : MonoBehaviour
 
     }
 
+    //Once the player goes throught the empty gameobject, it will trigger
+    //a text to appear with the location they are currently in
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player") 
