@@ -46,6 +46,12 @@ public class Movement : MonoBehaviour
         {
             SceneManager.LoadScene(2);
         }
+
+        //Resets the player if the ghost touches them
+        if (col.gameObject.name == "Ghost")
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
 
